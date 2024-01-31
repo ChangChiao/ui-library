@@ -15,8 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ui-library/avatar": ["ui-avatar/src/index.ts"],
-      "@ui-library/ui-button": ["ui-button/src/index.ts"]
+      "@codingHotPot/ui": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
