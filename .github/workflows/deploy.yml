@@ -84,6 +84,6 @@ jobs:
 
       - name: Deploy to npm
         run: npm publish --access public
-        working-directory: build
+        working-directory: build/libs/ui
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
