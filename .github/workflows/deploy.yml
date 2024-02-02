@@ -56,8 +56,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Authenticate with npm
-        run: echo "//registry.npmjs.org/:_authToken={{ secrets.NPM_TOKEN }}" > ~/.npmrc
+      #   - name: Authenticate with npm
+      #     run: echo "//registry.npmjs.org/:_authToken={{ secrets.NPM_TOKEN }}" > ~/.npmrc
 
       - name: download artifact
         uses: actions/download-artifact@v4
@@ -69,4 +69,7 @@ jobs:
         run: ls -R build
 
       - name: Deploy to npm
-        run: npm publish --access=public
+        run: npm publish --access public
+        working-directory: my-package
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
