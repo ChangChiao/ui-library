@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "prepare": "husky"
+    "build": "nx build",
+    "prepare": "husky",
+    "format:write": "nx format:write",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "@angular/animations": "~17.1.0",
