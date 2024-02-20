@@ -6,7 +6,9 @@
     "build": "nx build",
     "prepare": "husky",
     "format:write": "nx format:write",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "bump-version": "VERSION=$VERSION pnpm nx bump-version $LIB_NAME",
+    "update-deps": "LIB_NAME=$LIB_NAME DEPD_PACKAGE_NAME=$DEPD_PACKAGE_NAME VERSION=$VERSION ./scripts/deps-update.sh"
   },
   "dependencies": {
     "@angular/animations": "~17.1.0",
