@@ -31,6 +31,21 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint"
+    },
+    "semantic-release": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "LIB_NAME=ui pnpm semantic-release"
+      }
+    },
+    "bump-version": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "pnpm dlx replace-json-property ./libs/ui/package.json version $VERSION",
+          "pnpm dlx replace-json-property ./dist/libs/ui/package.json version $VERSION"
+        ]
+      }
     }
   }
 }
